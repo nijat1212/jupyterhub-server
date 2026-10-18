@@ -1,0 +1,14 @@
+# JupyterHub runtime data
+data/
+*.sqlite
+jupyterhub_cookie_secret
+.jupyter/
+
+# Logs
+*.log
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

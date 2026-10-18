@@ -1,0 +1,17 @@
+services:
+  jupyterhub:
+    build: .
+    image: jupyterhub-custom:latest
+    container_name: jupyterhub
+    restart: always
+    network_mode: "host"
+    environment:
+      DOCKER_NETWORK_NAME: jupyterhub-network
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:rw
+      - ./jupyterhub_config.py:/srv/jupyterhub/jupyterhub_config.py:ro
+      - /opt/jupyterhub/data:/opt/jupyterhub/data:rw
+      - jupyterhub_data:/data
+
+volumes:
+  jupyterhub_data:
