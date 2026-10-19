@@ -44,23 +44,10 @@ def create_dir_hook(spawner):
 
 c.Spawner.pre_spawn_hook = create_dir_hook
 
-c.Spawner.profile_list = [
-    {
-        'display_name': '📊 Data Science (Pandas, NumPy, Matplotlib, Seaborn, Excel)',
-        'description': 'Готовое рабочее место: анализ данных, таблицы, графики и запросы уже включены.',
-        'default': True,
-        'spawner_override': {
-            'image': 'custom-datascience-notebook:latest',
-        }
-    },
-    {
-        'display_name': '🐍 Чистый Python (Minimal Notebook)',
-        'description': 'Минималистичное окружение Python без предустановленных библиотек.',
-        'spawner_override': {
-            'image': 'jupyter/minimal-notebook:latest',
-        }
-    }
-]
+c.DockerSpawner.allowed_images = {
+    '📊 Data Science (Pandas, NumPy, Matplotlib, Seaborn, Excel)': 'custom-datascience-notebook:latest',
+    '🐍 Чистый Python (Minimal Notebook)': 'jupyter/minimal-notebook:latest'
+}
 
 import sys
 
