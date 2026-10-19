@@ -12,3 +12,8 @@ jupyterhub_cookie_secret
 Thumbs.db
 .vscode/
 .idea/
+
+# Environment and Secrets
+.env
+*.env
+
